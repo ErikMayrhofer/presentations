@@ -63,9 +63,8 @@ body {
     width: 100%;
     margin: -40px -60px -40px -60px;
     height: 100%;
-    background-color: green;
     content: ' ';
-    opacity: 0.8;
+    opacity: 0.9;
     transition: opacity 1s;
 }
 .impress-enabled .step {
@@ -102,10 +101,11 @@ body {
     Slide Backgrounds style
 */
 .slide:before, .slide {
+    background-color: rgb(236, 238, 236);
     border-radius: 20px;
 }
 .slide {
-    background-color: #AAAAAA;
+    box-shadow: 0 0 20px -5px #000000AA;
 }
 
 /*
