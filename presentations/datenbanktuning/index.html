@@ -16,7 +16,7 @@
     <meta name="author" content="Henrik Ingo" />
     <link rel="stylesheet" href="../../extras/highlight/styles/github.css">
 
-    <link href="css/markdown-slides.css" rel="stylesheet" />
+    <link href="css/threeswivel.css" rel="stylesheet" />
 
 </head>
 
@@ -29,8 +29,11 @@
 
     <div id="impress" data-autoplay="0">
 
+        <div id="step-intro" class="step" data-x="0" data-y="0" data-z="5000">
+            <h1> Datenbanktuning </h1>
+        </div>
 
-        <div id="step-graphs" class="step slide" data-x="0" data-y="0">
+        <div id="step-graphs" class="step slide" data-x="0" data-y="0" data-z="0">
             Graphs
         </div>
 
@@ -38,40 +41,82 @@
             Title
         </div>
 
-        <div class="step" data-x="0" data-y="200" data-z="10">
-            Scalability
+        <div id="step-sub-overview" class="step" data-x="0" data-y="200" data-z="10">
         </div>
 
         <div id="step-design-intro" class="step slide" data-x="-750" data-y="600" data-z="-250" data-scale="0.5">
             Design
         </div>
-        <div class="step slide" data-x="-3000" data-y="600" data-z="0" data-rotate-y="90">
+        <div class="step slide back" data-x="-3000" data-y="600" data-z="0" data-rotate-y="90">
             Design - 1
         </div>
-        <div class="step slide" data-x="-3000" data-y="600" data-z="-1000" data-rotate-y="90">
+        <div class="step slide back" data-x="-3000" data-y="600" data-z="-1000" data-rotate-y="90">
             Design - 2
         </div>
-        <div class="step slide" data-x="-3000" data-y="600" data-z="-2000" data-rotate-y="90">
+        <div class="step slide back" data-x="-3000" data-y="600" data-z="-2000" data-rotate-y="90">
             Design - 3
         </div>
-        <div class="step slide" data-x="-3000" data-y="600" data-z="-3000" data-rotate-y="90">
+        <div class="step slide back" data-x="-3000" data-y="600" data-z="-3000" data-rotate-y="90">
             Design - 4
         </div>
-        <div id="step-design-outro" class="step" data-x="-750" data-y="600" data-z="-250" data-scale="0.5"></div>
+        <div id="step-design-outro" class="step outro" data-x="-750" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
 
-        <div class="step slide" data-x="-250" data-y="600" data-z="-250" data-scale="0.5">
+
+        <div id="step-db-intro" class="step slide" data-x="-250" data-y="600" data-z="-250" data-scale="0.5">
             In der Datenbank
         </div>
-        <div>
-            
+        <div class="step slide back" data-x="-750" data-y="2000" data-z="0" data-rotate-x="90" data-rotate-z="-90">
+            Datenbank - 1
         </div>
+        <div class="step slide back" data-x="-750" data-y="2000" data-z="-1000" data-rotate-x="90" data-rotate-z="-90">
+            Datenbank - 2
+        </div>
+        <div class="step slide back" data-x="-750" data-y="2000" data-z="-2000" data-rotate-x="90" data-rotate-z="-90">
+            Datenbank - 3
+        </div>
+        <div class="step slide back" data-x="-750" data-y="2000" data-z="-3000" data-rotate-x="90" data-rotate-z="-90">
+            Datenbank - 4
+        </div>
+        <div id="step-db-outro" class="step outro" data-x="-250" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
 
-        <div class="step slide" data-x="250" data-y="600" data-z="-250" data-scale="0.5">
+
+        <div id="step-tools-intro" class="step slide" data-x="250" data-y="600" data-z="-250" data-scale="0.5">
             Tools
         </div>
+        <div class="step slide back" data-x="750" data-y="2000" data-z="-3000" data-rotate-x="90" data-rotate-z="90">
+            Tools - 1
+        </div>
+        <div class="step slide back" data-x="750" data-y="2000" data-z="-2000" data-rotate-x="90" data-rotate-z="90">
+            Tools - 1
+        </div>
+        <div class="step slide back" data-x="750" data-y="2000" data-z="-1000" data-rotate-x="90" data-rotate-z="90">
+            Tools - 2
+        </div>
+        <div class="step slide back" data-x="750" data-y="2000" data-z="0" data-rotate-x="90" data-rotate-z="90">
+            Tools - 3
+        </div>
+        <div id="step-tools-outro" class="step outro" data-x="250" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
 
-        <div class="step slide" data-x="750" data-y="600" data-z="-250" data-scale="0.5">
+
+        <div id="step-client-intro" class="step slide" data-x="750" data-y="600" data-z="-250" data-scale="0.5">
             Client
+        </div>
+        <div class="step slide back" data-x="3000" data-y="600" data-z="-3000" data-rotate-y="-90">
+            Client - 1
+        </div>
+        <div class="step slide back" data-x="3000" data-y="600" data-z="-2000" data-rotate-y="-90">
+            Client - 2
+        </div>
+        <div class="step slide back" data-x="3000" data-y="600" data-z="-1000" data-rotate-y="-90">
+            Client - 3
+        </div>
+        <div class="step slide back" data-x="3000" data-y="600" data-z="0" data-rotate-y="-90">
+            Client - 4
+        </div>
+        <div id="step-client-outro" class="step outro" data-x="750" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
+
+        <div id="step-end" class="step" data-x="0" data-y="-100" data-z="6000">
+            <h1> Vielen Dank! </h1>
         </div>
 
     </div>

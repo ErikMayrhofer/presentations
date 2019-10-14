@@ -58,34 +58,71 @@ body {
 /*
     Make inactive steps a little bit transparent.
 */
+.slide:before{
+    position: absolute;
+    width: 100%;
+    margin: -40px -60px -40px -60px;
+    height: 100%;
+    background-color: green;
+    content: ' ';
+    opacity: 0.8;
+    transition: opacity 1s;
+}
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
+    /* opacity: 0.3; */
     transition:         opacity 1s;
 }
-.impress-enabled .step.active { opacity: 1 }
+.impress-enabled .slide.active:before,
+.impress-on-step-tools-outro #step-tools-intro:before,
+.impress-on-step-db-outro #step-db-intro:before,
+.impress-on-step-client-outro #step-client-intro:before,
+.impress-on-step-design-outro #step-design-intro:before,
+.impress-on-step-sub-overview #step-graphs:before
+{ 
+    opacity: 0;
+}
 
 /*
     Hide some panels
 */
 .hide{
-    opacity: 0 !important;
+    opacity: 0;
 }
 .hide.active {
-    opacity: 1 !important;
+    opacity: 1;
 }
-.impress-on-step-title .slide,
-.impress-on-step-graphs .slide {
+.impress-on-step-title .slide:not(#step-title),
+.impress-on-step-graphs .slide:not(#step-graphs),
+.impress-on-step-sub-overview .back {
     opacity: 0;
 }
 
 /*
     Slide Backgrounds style
 */
-.slide {
-    background-color: gray;
+.slide:before, .slide {
     border-radius: 20px;
 }
+.slide {
+    background-color: #AAAAAA;
+}
+
+/*
+    Outro Slides
+*/
+.step{
+    pointer-events: none;
+}
+.slide{
+    pointer-events: all;
+}
+
+
+
+/*
+    OTHER STUFFS
+*/
 
 .notes {
     display: none;
