@@ -184,9 +184,13 @@ body[class*="outro"] div[id$="intro"] > *
     opacity: 1;
 }
 
+
+pre{
+    margin: 0;
+}
 /* Highlight.js used for coloring pre > code blocks. */
 pre > code {
-    font-size: 14px;
+    font-size: 25px;
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
