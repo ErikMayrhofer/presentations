@@ -44,7 +44,13 @@
         </div>
 
         <div id="step-title" class="step hide slide" data-x="0" data-y="500" data-z="-500" data-rotate-x="-90">
-            Title
+            <h1>Datenbanktuning</h1>
+            <ul>
+                <li>Unberechenbare Benutzeranzahl</li>
+                <li>Unberechenbarer Workload</li>
+                <li>Durchgehend Online</li>
+                <li>Kein klarer Lösungsweg</li>
+            </ul>
             <ul class="notes">
                 <li>Probleme: durchgehend online, wieviele Nutzer? => unberechenbarer workload</li>
                 <li>Für lineare Skalierbarkeit beachten</li>
@@ -52,47 +58,173 @@
             </ul>
         </div>
 
-        <div id="step-sub-overview" class="step" data-x="0" data-y="200" data-z="10">
+
+        <div id="step-sub-overview" class="step" data-x="0" data-y="160" data-z="10">
+            <ul class="notes">
+                <li>Bereits im Design (schlechtes Datenmodell untunbar)</li>
+                <li>Flaschenhals finden</li>
+                <li>Nichtlineare Skalierung immer teuer</li>
+            </ul>
         </div>
 
-        <div id="step-design-intro" class="step slide" data-x="-750" data-y="600" data-z="-250" data-scale="0.5">
-            Design
+        <div id="step-design-intro" class="step slide intro" data-x="-750" data-y="600" data-z="-250" data-scale="0.5">
+            <h1 class="large">Design</h1>
+            <ul>
+                <li>OLAP vs OLTP</li>
+                <li>Datenmodell</li>
+                <li>Applikationsarchitektur</li>
+                <li>Hardware Konfiguration</li>
+                <li>Software Konfiguration</li>
+            </ul>
+            <ul class="notes">
+                <li>OLAP vs OLTP (andere architekturen)</li>
+                <li>Schlechtes Datenmodell -> meh</li>
+                <li>Datamodel soll nicht, wie es die theoretiker gerne hätten generell sein, sondern Applikationsspezifisch</li>
+                <li>Hardware muss natürlich passen, SSD, Raid, etc</li>
+                <li>Große DB vllt nicht auf Docker oder VM</li>
+            </ul>
         </div>
         <div id="step-design-back-1" class="step slide back design" data-x="-3000" data-y="600" data-z="0" data-rotate-y="90">
-            Design - 1
+            <h1>Datenmodell</h1>
+            <ul>
+                <li>Data Access Path</li>
+                <li>Denormalisieren</li>
+                <li>OLAP vs OLTP</li>
+                <li>Aggregation Tables</li>
+            </ul>
+            <ul class="notes">
+                <li>Welche Tables werden verjoined -> Denormalisieren</li>
+                <li>OLAP -> Denorm, bei OLTP nicht</li>
+                <li>Form der selektiven Denomralisierung -> Aggregation table</li>
+            </ul>
         </div>
         <div id="step-design-back-2" class="step slide back design" data-x="-3000" data-y="600" data-z="-1000" data-rotate-y="90">
-            Design - 2
+            <h1>Applikationsarchitektur</h1>
+            <ul>
+                <li>Pessimistic / Optimistic Locking</li>
+                <li>Stateless => Optimistic</li>
+                <li>Softwarelayer</li>
+                <li>JPA</li>
+            </ul>
+            <ul class="notes">
+                <li>Locking => Je nachdem was man erwartet</li>
+                <li>Viele Nutzer gleichzeitig => Optimistisch</li>
+                <li>Wenige Nutzer => Pessimistisch</li>
+                <li>Softwarelayer => schlechte Queries => Overhead => Client</li>
+            </ul>
         </div>
         <div id="step-design-back-3" class="step slide back design" data-x="-3000" data-y="600" data-z="-2000" data-rotate-y="90">
-            Design - 3
+            <h1>Hardwarekonfiguration</h1>
+            <ul>
+                <li>Verborgene Skalierbarkeitsprobleme</li>
+                <li>Flaschenhälse finden</li>
+            </ul>
+            <ul class="notes">
+                <li>"Kaufen um genug zu haben"</li>
+                <li>Auf Skalierbarkeit achten => genug Platz zum Ausbauen</li>
+                <li>Rechtzeitig vorsorgen</li>
+                <li>Schwächstes Glied</li>
+            </ul>
         </div>
         <div id="step-design-back-4" class="step slide back design" data-x="-3000" data-y="600" data-z="-3000" data-rotate-y="90">
-            Design - 4
+            <h1>Softwarekonfiguration</h1>
+            <ul>
+                <li>Betriebssystem</li>
+                <li>Filesystem</li>
+                <li>Netzwerk</li>
+                <li>Asynchron</li>
+            </ul>
+            <pre><code class="SQL">FILESYSTEMIO_OPTIONS</code></pre>
+            <ul class="notes">
+                <li>Schlankes Betriebssystem</li>
+                <li>VM -> Docker -> DB => Schlecht</li>
+                <li>Wahl des Filesystems (btrfs? NTFS?)</li>
+                <li>Ansynchrone Abarbeitung</li>
+                <li>Init-Params</li>
+                <li>Netzwerkkonfiguration beachten (hardware?)</li>
+            </ul>
+        </div>
+        <div id="step-init-parameter" class="step hide slide" data-x="0" data-y="500" data-z="-1500" data-rotate-x="-90" data-rotate-y="0" data-rotate-z="0">
+            <h1>Initialisationsparameter</h1>
+            <ul>
+                <li>Binärformat</li>
+                <li>System-Tables</li>
+                <li><pre><code>ALTER SYSTEM SET AAA=BBB;</code></pre></li>
+                <li><pre><code>CREATE PFILE FROM SPFILE;</code></pre></li>
+            </ul>
+            <ul class="notes">
+                <li>Nicht Lesbar</li>
+                <li>Kans in lesbares format umwandeln</li>
+            </ul>
         </div>
         <div id="step-design-outro" class="step outro" data-x="-750" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
 
 
-        <div id="step-db-intro" class="step slide" data-x="-250" data-y="600" data-z="-250" data-scale="0.5">
-            In der Datenbank
+
+        <div id="step-db-intro" class="step slide intro" data-x="-250" data-y="600" data-z="-250" data-scale="0.5">
+            <h1 class="large">Datenbank</h1>
+            <ul>
+                <li>Cursor</li>
+                <li>Storage & Memory</li>
+                <li>Redo-Log</li>
+                <li>Tablespaces</li>
+                <li>SQL</li>
+            </ul>
         </div>
         <div id="step-db-back-1" class="step slide back db" data-x="-750" data-y="2000" data-z="0" data-rotate-x="90" data-rotate-z="-90">
-            Datenbank - 1
+            <h1>Cursor</h1>
+            <ul>
+                <li>PL/SQL => Cursor</li>
+                <li>JDBC => Prepared Statements</li>
+                <li>Dynamic SQL</li>
+            </ul>
+            <ul class="notes">
+                <li>
+                    Dynamic-SQL => Kein Optimizer, Jedes mal neu Parsen
+                </li>
+                <li>Hard vs Soft parse kommt später</li>
+            </ul>
         </div>
         <div id="step-db-back-2" class="step slide back db" data-x="-750" data-y="2000" data-z="-1000" data-rotate-x="90" data-rotate-z="-90">
-            Datenbank - 2
+            <h1>I/O & Memory</h1>
+            <ul>
+                <li>System Global Area</li>
+                <li>Shared, Large, Java, Streams - Pool</li>
+                <li>Buffer Cache</li>
+                <li>Log Buffer</li>
+                <li>Process Private Memory</li>
+                <li>Automatic vs Manual</li>
+                <li><pre><code class="sql">SELECT * FROM V$SGA_TARGET_ADVICE</code></pre></li>
+                <li><pre><code class="sql">SELECT * FROM V$SGA_SYSSTAT</code></pre></li>
+            </ul>
+            <ul class="notes">
+                <li>Striping</li>
+                <li>SGA 0 => Manual Mode für alle, sonst automatisch</li>
+                <li>Größe über Initialisationsparameter</li>
+                <li>Wie Groß? => Vorschläge aus SYSSTAT</li>
+                <li>Buffer => keine FUll Table Scans</li>
+                <li>Buffer-Pools => Unterschiedliche Zugriffsmuster (einer viel, einer wenig)</li>
+            </ul>
         </div>
         <div id="step-db-back-3" class="step slide back db" data-x="-750" data-y="2000" data-z="-2000" data-rotate-x="90" data-rotate-z="-90">
-            Datenbank - 3
+            <h1>Redo Log</h1>
+            <ul>
+                <li>Redo vs Undo</li>
+                <li>Archiver</li>
+                <li>Groß => Gut</li>
+            </ul>
         </div>
         <div id="step-db-back-4" class="step slide back db" data-x="-750" data-y="2000" data-z="-3000" data-rotate-x="90" data-rotate-z="-90">
-            Datenbank - 4
+            <h1>Tablespaces</h1>
         </div>
         <div id="step-db-outro" class="step outro" data-x="-250" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
 
 
-        <div id="step-tools-intro" class="step slide" data-x="250" data-y="600" data-z="-250" data-scale="0.5">
-            Tools
+        <div id="step-tools-intro" class="step slide intro" data-x="250" data-y="600" data-z="-250" data-scale="0.5">
+            <h1 class="large">Tools</h1>
+            <ul>
+                <li>Yeet</li>
+            </ul>
         </div>
         <div id="step-tools-back-1" class="step slide back tools" data-x="750" data-y="2000" data-z="-3000" data-rotate-x="90" data-rotate-z="90">
             Tools - 1
@@ -109,8 +241,11 @@
         <div id="step-tools-outro" class="step outro" data-x="250" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
 
 
-        <div id="step-client-intro" class="step slide" data-x="750" data-y="600" data-z="-250" data-scale="0.5">
-            Client
+        <div id="step-client-intro" class="step slide intro" data-x="750" data-y="600" data-z="-250" data-scale="0.5">
+            <h1 class="large">Client</h1>
+            <ul>
+                <li>Yeet</li>
+            </ul>
         </div>
         <div id="step-client-back-1" class="step slide back client" data-x="3000" data-y="600" data-z="-3000" data-rotate-y="-90">
             Client - 1

@@ -77,7 +77,8 @@ body {
 .impress-on-step-db-outro #step-db-intro:before,
 .impress-on-step-client-outro #step-client-intro:before,
 .impress-on-step-design-outro #step-design-intro:before,
-.impress-on-step-sub-overview #step-graphs:before
+.impress-on-step-sub-overview #step-graphs:before,
+.impress-on-step-sub-overview .intro:before
 { 
     opacity: 0;
 }
@@ -155,13 +156,32 @@ h3 {
     margin-top: 0px;
     text-align: center;
 }
+h1.large {
+    font-size: 120px;
+}
 
 p {
     margin: 0.7em;
 }
 
+ul {
+    font-size: 1.1em;
+}
+
 li {
     margin: 0.2em;    
+}
+
+
+div[id$="intro"] > *:not(h1){
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+body[class*="intro"] div[id$="intro"] > *,
+body[class*="outro"] div[id$="intro"] > *
+{
+    opacity: 1;
 }
 
 /* Highlight.js used for coloring pre > code blocks. */
