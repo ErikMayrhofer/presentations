@@ -82,6 +82,14 @@ body {
     opacity: 0;
 }
 
+body[class*="impress-on-step-design-back"] .slide:not(.design),
+body[class*="impress-on-step-tools-back"] .slide:not(.tools),
+body[class*="impress-on-step-db-back"] .slide:not(.db),
+body[class*="impress-on-step-client-back"] .slide:not(.client)
+{
+    opacity: 0;
+}
+
 /*
     Hide some panels
 */
@@ -95,6 +103,12 @@ body {
 .impress-on-step-graphs .slide:not(#step-graphs),
 .impress-on-step-sub-overview .back {
     opacity: 0;
+}
+
+.impress-on-step-end .slide:before,
+.impress-on-step-intro .slide:before
+{
+    opacity: 1;
 }
 
 /*
