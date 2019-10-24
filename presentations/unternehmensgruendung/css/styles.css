@@ -39,6 +39,10 @@
     justify-content: center;
     transition: opacity 1s;
 }
+#bigheader-end{
+    justify-content: start;
+}
+
 html, body {
     margin: 0;
     font-size: 1.5rem;
@@ -73,8 +77,11 @@ body[class*="header"] {
 body[class*="bigheader"] {
     background-color: #7fa99b;
 }
-body[class*="grd"] {
+body[class*="untart"] {
     background-color: #94aa2a;
+}
+body[class*="grd"] {
+    background-color: #FAA613;
 }
 
 img[src*=".svg"] {

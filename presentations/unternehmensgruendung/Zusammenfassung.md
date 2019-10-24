@@ -115,6 +115,66 @@ https://www.gruenderservice.at/site/gruenderservice/publikationen/lf_gruender_20
 SEITE 50
 
 
+# Schritte zum Einzelunternehmen
+## 1. Beratung und 2. Genehmigungen und NeuFÖG
+ * Gewerbeberechtigung
+ * Betriebsanlagengenehmigung
+## 3. Gewerbeanmeldung
+  * elektronisch?
+
+Wenn man selbst der Geschäftsführer ist:
+ * Reisepass
+ * Nachweis der Befähigung (Meisterbrief etc), außer bei freien Gewerben
+ * (Auslandsbürger Strafregister und Aufenthaltserlaubnis etc)
+## 4. Gebietskrankenhkasse
+ * Mitarbeiter müssen vor Ihrer Einstellung dort angemeldet werden
+## 5. Sozialversicherung
+ * Während des 1. Monats (meistens auch direkt bei der Gewerbeanmeldung)
+## 6. Finanzamt
+ * Während des 1. Monats
+ * Steuernummer beantragen (meistens auch direkt bei Gewerbeanmeldung)
+## 7. Gemeinde/Staat
+ * Arbeitnehmer müssen gemeldet werden (Kommunalsteuer)
+  
+# Schritte zur OG / KG
+## 1. Beratung und 2. Genehmigungen und NeuFÖG
+ * Gewerbeberechtigung
+ * Betriebsanlagengenehmigung
+
+## 3. Gesellschaftsvertrag
+ * Keine Formalitäten
+
+## 4. Firmenbucheintragung
+Benötigte Formulare:
+ * Gesellschaftsvertrag
+ * beglaubigte Musterzeichnung der vertretungsbefugten Organe (Gesellschafter die selber haften)
+
+Was muss geklärt sein:
+ * Firma, 
+ * Haftungssumme aller Kommanditisten, 
+ * Sitz, Adresse 
+ * Bezeichnung des Geschäftszweigs
+ * Namen, Geburtsdaten aller Gesellschafter
+ * Vertretunsregelung
+
+## 5. - 9. Wie bei EU
+
+# Schritte zur Gmbh
+
+## 1. Beratung und 2. Genehmigung und NeuFÖG
+## 3. Gesellschaftsvertrag / Errichtungserklärung
+ * Gesellschaftsvertrag mit Notariatsakt
+## 4. Gesellschafterbeschluss
+ * Geschäftsführer
+ * Vertretungsbefugnis
+## 5. Bankbestätigung
+ * Einzahlung des Stammkapitals
+## 6. Firmenbucheingabe
+ * Gesellschaftsvertrag mit Notarieller Ausfertigung
+ * Beglaubigter Gesellschafterbeschluss
+## 7. Gewerbeanmeldung
+## 8 - 11 Wie oben
+
 # Quellen
 https://www.gruenderservice.at/site/gruenderservice/publikationen/lf_gruender_2019.pdf
 
