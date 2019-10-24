@@ -1,20 +1,13 @@
 <!doctype html>
 
-<!--
-  A presentation done entirely in Markdown, as found in extras/markdown/.
-  
-  By: @henrikingo
--->
-
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <title>Markdown in impress.js | by Henrik Ingo @henrikingo</title>
-
-    <meta name="description" content="Authoring impress.js presentations in Markdown" />
-    <meta name="author" content="Henrik Ingo" />
-    <link rel="stylesheet" href="../../extras/highlight/styles/github.css">
+    <title>Unternehmensgründung</title>
+    <meta name="viewport" content="width=1024" />
+    <meta name="description" content="Presentation für Unternehmensgründung" />
+    <meta name="author" content="Erik Mayrhofer" />
 
     <link href="css/styles.css" rel="stylesheet" />
 
@@ -28,18 +21,78 @@
     </div>
 
     <div id="impress" data-autoplay="0">
+        <div id="stripe-a" class="stripe"></div>
+        <div id="stripe-b" class="stripe"></div>
 
-        <div id="step-intro" class="step" data-x="0" data-y="0" data-z="5000">
-            <h1> Datenbanktuning </h1>
+        <!-- Unternehmensgründung -->
+        <!-- Plan -> Gründung -> Pflichten -->
+
+        <div id="bigheader-unternehmensgruendung" class="step header" data-x="0" data-y="-400" data-z="0" data-rotate-z="15">
+            <h1> Unternehmensgründung </h1>
         </div>
 
-        <div id="step-end" class="step" data-x="0" data-y="-100" data-z="6000">
-            <h1> Vielen Dank! </h1>
-            <ul class="notes">
-                <li>
-                    Quellen am Handout
-                </li>
+        <div id="header-uebersicht" class="step header" data-x="2000" data-y="250" data-z="0" data-rotate-z="0">
+            <h1 style="margin-bottom: 20px;"> Prozess </h1>
+            <div class="horizontal-flex">
+                <img src="img/sketch.svg"/>
+                <img src="img/contract.svg"/>
+                <img src="img/checklist.svg"/>
+            </div>
+        </div>
+
+        <div id="grd-header-unternehmensformen" class="step header hide-not-active" data-x="2000" data-y="900" data-z="0" data-rotate-z="90" data-scale="0.3">
+            <h1 style="text-align: center;"> Unternehmensformen </h1>
+            <div class="horizontal-flex">
+                <h2 class="fckn-huge">EU</h2>
+                <h2 class="fckn-huge">OG</h2>
+            </div>
+            <div class="horizontal-flex">
+                <h2 class="fckn-huge">GmbH</h2>
+            </div>
+        </div>
+
+        <div id="grd-einzelunternehmen" class="step hide-not-active" data-x="2200" data-y="1000" data-z="0"
+            data-rotate-z="90" data-scale="0.3">
+            <h1>Einzelunternehmen</h1>
+            <ul>
+                <li><span style="text-decoration: underline;">Gewerbeschein</span></li>
+                <li><span>Finanzamt</span></li>
+                <li><span>Sozialversicherung </span></li>
+                <li><span>Firmenbuch ?</span></li>
             </ul>
+        </div>
+
+        <div id="grd-offeneges" class="step hide-not-active" data-x="2400" data-y="1100" data-z="0"
+            data-rotate-z="90" data-scale="0.3">
+            <h1>Offene Gesellschaft</h1>
+            <ul>
+                <li><span>mind. 2 Gesellschafter</span></li>
+                <li><span>Gewerbeschein</span></li>
+                <li><span>Gesellschaftsvertrag</span></li>
+                <li><span style="text-decoration: underline;">Firmenbuch</span></li>
+                <li><span>Sozialvers.</span></li>
+                <li><span>Finanzamt</span></li>
+            </ul>
+        </div>
+
+        <div id="grd-gmbh" class="step hide-not-active" data-x="2600" data-y="1200" data-z="0"
+            data-rotate-z="90" data-scale="0.3">
+            <h1>Gesellschaft m.b.H.</h1>
+            <ul>
+                <li><span>Stammkapital</span></li>
+                <li><span>Gewerbeschein</span></li>
+                <li><span>Gesellschaftsvertrag (Notar)</span></li>
+                <li><span style="text-decoration: underline;">Firmenbuch</span></li>
+                <li><span>Sozialvers.</span></li>
+            </ul>
+        </div>
+
+        <div id="bigheader-end" class="step header" data-x="0" data-y="1000" data-z="5000" data-rotate-x="-30">
+            <h1> Vielen Dank! </h1>
+            
+            <div>
+                Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from 
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </div>
 
     </div>
