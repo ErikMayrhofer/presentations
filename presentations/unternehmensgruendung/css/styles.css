@@ -28,6 +28,9 @@
 }
 
 /***** Per slide hacks *****/
+.step .notes {
+    display: none;
+}
 
 /***** Presentation *****/
 
@@ -83,6 +86,12 @@ body[class*="untart"] {
 body[class*="grd"] {
     background-color: #FAA613;
 }
+body[class*="planen"] {
+    background-color: #485665;
+}
+body[class*="planen-header"] {
+    background-color: black;
+}
 
 img[src*=".svg"] {
     color: white;
@@ -137,6 +146,42 @@ ul {
 }
 ul > li > span {
     color: white;
+}
+
+.list {
+    display: block;
+}
+
+.list > h1 {
+    position: relative;
+    transform-origin: 0 0;
+    transform: rotateZ(-90deg);
+    bottom: -100%;
+}
+
+.list > ul {
+    position: relative;
+    bottom: 0;
+    margin-bottom: 0;
+    margin-left: 7rem;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.list.present > ul {
+    opacity: 1;
+}
+
+.list.future {
+    opacity: 0;
+}
+
+body[class*="planen-header"] .list {
+    opacity: 1;
+}
+
+#planen-header {
+    flex-direction: row;
 }
 /***** Plugins ******/
 .impress-enabled div#impress-toolbar {

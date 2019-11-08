@@ -184,3 +184,28 @@ https://apppool.wko.at/gs/app/GSUnternehmertest.aspx
  * Businessplan
  * Marktforschung
  * Form wählen
+
+# Planen
+## Businessplan
+ * Reduziert Risiko, gibt Leitfaden und Übersicht
+ * Schriftform: Durchdachte Überlegung
+ * Leitfaden bei Entscheidungen
+ * Gibt Sicherheit bei Verhandlungen
+ * Finanzierung durch Banken
+## Marketing Wettbewerb
+
+## Kapitalbedarf & Finanzierung
+## Planrechnung
+## Förderung
+## Rechtsform wählen
+## Sozialversicherung
+## Steuern
+## Gewerberecht
+## Betriebsanlagenrecht
+
+# Gründung
+## Gewerbeanmeldung
+## Weiter Behörden
+## Gründungskosten
+## Gründerservice Beratung
+## Gründungsschritte Überblick
