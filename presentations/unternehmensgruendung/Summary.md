@@ -79,3 +79,80 @@
 * Genehmigung wenn: Schutzinteressen beeinträchtigt werden. z.B: Gesundheitsgefährdung von Nachbarn und Kunden, Verkehr beeinträchtigt wird, Wasserrecht, Schulen und öffentliche Anstalten etc.
 # Gründung
 
+Gründungsberatung: EU, OG, GmbH
+Erklärung der Neugründung: EU, OG, GmbH
+Gesellschaftsvertrag / Errichtungserklärung: OG, GmbH
+Gesellschafterbeschluss: GmbH
+Bankbestätigung: GmbH
+Firmenbuch: OG, GmbH (EU > 700k Jahresumsatz)
+Gewerbeanmeldung: EU, OG, GmbH 
+Gebietskrankenkasse: EU, OG, GmbH
+Gewerbliche Sozialversicherung: EU, OG, GmbH
+Finanzamt: EU, OG, GmbH
+Gemeinde / Stadt: EU, OG, GmbH
+
+## Gründungsberatung
+Gründerservice bzw. WKO. 
+ * Welche Genehmigungen, etc
+## Erklärung der Neugründung
+ * NeuFöG in Anspruch nehmen (von der WKO)
+ * Erklärungsformular ausfüllen
+## Gesellschaftsvertrag
+ * Mindestens zwei Gesellschafter, formlos
+ * schriftform empfohlen
+ * (Notariatsakt bei GmbH)
+## Gesellschafterbeschluss
+ * Einen Gesellschafter zum Geschäftsführer (muss kein Gesellschafter sein) bestellen. 
+ * Privat oder Notariell
+## Bankbestätigung
+ * Einzahlung des Stammkapitals (35k bzw 10k Gründungsprivileg) auf Gesellschaftskonto
+## Firmenbuch
+ * Gesellschaftsvertrag (Gesellschafterbeschluss, Bankbestätigung bei GmbH)
+ * Braucht: Notariell beglaubigte Musterzeichnungen (Referenzunterschriften)
+ * Kommanditisten dürfen nicht im Firmenname auftauchen
+ * Allgemeine Daten (Wohnsitz der Gesellschafter, Bezeichnung, Vetretungen)
+## Gewerbeanmeldung
+ * Reisepass, Befähigungsnachweis (oder anderer ist gewerberechticher Geschäftsführer)
+ * Mitglied der WKO (Beitragsfplicht)
+## Gebietskrankenkasse
+ * Mitarbeiter vor Anstellung bei der GKK anmelden
+ * gewerberechtlicher Geschäftsführer muss vorher auf der GKK angemeldet werden
+## Sozialversicherung
+ * Innerhalb eines Monats
+## Finanzamt
+ * Steuernummer beantragen, Gewerbebetätigung melden 
+## Gemeinde/Staat
+ * Betriebsstandort braucht Flächenwidmung, Baubewilligung
+ * Wenn Arbeitnehmer beschäftigt werden, dann Mitteilen (Kommunalsteuer)
+
+# Sonstiges
+## Mitarbeiter anstellen (Phillip Auinger)
+* Dienstzettel oder Arbeitsvertrag
+### Arbeitsvertrag
+ * Probezeit, Befristung, Mehrarbeitsverpflichtung, Kündigungsmöglichkeit, Konkurrenzklausel, 
+### Kollektivvertrag
+ * Branchenabhängig
+ * "Mindestanforderungen"
+### Sozialversicherung
+ * Vor Antritt der Arbeit der Dienstnehmer bei GKK anmelden
+ * Auch bei geringfügigen Arbeitern (< 446€ ) aber Nachlässiger
+### Arbeitnehmerschutz
+ * Sicherheit und Gesundheit der Arbeitnehmer gewährleisten
+ * Betriebe bis 50 Personen können Dienste der Allgemeinen Unfallversicherungsanstalt in Anspruch nehmen um für die Gesundheit der Mitarbeiter zu sorgen
+ * Einhaltung der Arbeitsgrenzen, Wochenenden etc, und Rücksicht auf geschützte Personen (Schwangere, Jugendliche)
+## Auflösung des Arbeitsverhältnisses (Phillip Auinger)
+* Auflösungsabgabe 131€
+* Auflösung während Probezeit/Befristung
+* Kündigung vs fristlose Entlassung
+* vorzeitiger Austritt bei Austrittsgrund
+* Einvernehmliche Auflösung
+## Buchhaltung
+ * Belege sammeln, Aufzeichnungen führen -> 7 Jahre aufbewahren
+ * Manche Belege (Grundstücke etc) -> 22 Jahre
+ * Bareinnahmen mit Registrierkasse o.Ä. belegen (wenn Jahresumsatz > 15.000 oder Barumsatz > 7.500€) Bareinzahlung sind auch Kreditkarten, Gutscheine, Schecks
+ * Kunde ist verpflichtet den Beleg anzunehmen und (bis außerhalb des Gebäudes) aufzubewahren
+ * Ausnahme: Umsätze im Freien (ohne Räumlichkeit, also auf Straße oder bei Festen)
+ * Wareneingangsbuch, Kassabuch, Buchführung (Pauschalierung, Ein-Aus-Rechnung, Doppelte Buchführung)
+ * Kostenrechnung freiwillig (empfohlen)
+## Nebenberuf selbstständig
+ * Achtung: Man ist mehrfachversichert (ASVG, GSVG)
