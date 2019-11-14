@@ -17,6 +17,7 @@ h1, h2, h3, span {
     -4px 1px 2px black,
     -6px 2px 3px black;
     margin: 0;
+    letter-spacing: 3px;
 }
 
 h1 {
@@ -124,4 +125,54 @@ body[class*="title-toc"] #grnd-header > h1 {
 }
 body[class*="title-toc"] #know-header > h1 {
     color: #b165f0;
+}
+
+/* =========== GRND ============ */
+.grnd-step {
+    transition: all 0.8s;
+}
+body[class*="grnd-step"] .grnd-step:not(.active) { opacity: 0; }
+body[class*="grnd-step"] .grnd-progress { opacity: 1; }
+.grnd-progress {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    margin: 20px;
+    z-index: 3;
+    border-radius: 10px;
+    background-color: #2cc75b;
+    opacity: 0;
+    box-shadow: 0 0 5px -2px black inset;
+}
+.grnd-progress .bar{
+    height: 30px;
+    border-radius: 10px;
+    background-color: #53ff87;
+    width: 0;
+    transition: all 1s;
+    transition-timing-function: ease-in;
+    box-shadow: 0 0 5px -2px black;
+}
+body[class*="grnd-step-2"] .grnd-progress .bar {width: 9%;}
+body[class*="grnd-step-3"] .grnd-progress .bar {width: 18%;}
+body[class*="grnd-step-4"] .grnd-progress .bar {width: 27%;}
+body[class*="grnd-step-5"] .grnd-progress .bar {width: 36%;}
+body[class*="grnd-step-6"] .grnd-progress .bar {width: 45%;}
+body[class*="grnd-step-7"] .grnd-progress .bar {width: 54%;}
+body[class*="grnd-step-8"] .grnd-progress .bar {width: 63%;}
+body[class*="grnd-step-9"] .grnd-progress .bar {width: 72%;}
+body[class*="grnd-step-10"] .grnd-progress .bar {width: 81%;}
+body[class*="grnd-step-11"] .grnd-progress .bar {width: 90%;}
+body[class*="grnd-step-end"] .grnd-progress .bar {width: 100%;}
+
+.grnd-step h1 {
+    font-size: 100px;
+    text-align: center;
+}
+
+ul.notes {
+    display: none;
 }
