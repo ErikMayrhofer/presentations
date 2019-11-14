@@ -87,6 +87,7 @@ h1 {
 .post-it > h1 {
     height: auto;
     text-align: center;
+    letter-spacing: normal;
 }
 
 .post-it > ul {
@@ -175,4 +176,38 @@ body[class*="grnd-step-end"] .grnd-progress .bar {width: 100%;}
 
 ul.notes {
     display: none;
+}
+
+/* ========== KNOW ===========*/
+.know {
+    background-color: black;
+    box-shadow: 0 0 20px 10px black;
+    /* box-shadow: 0 0 10px 12px #b165f0 inset; */
+    border-radius: 10px;
+}
+
+.know > h1 {
+    font-size: 100px;
+    text-align: center;
+}
+
+/* ======== END ============*/
+.big-blur{
+    position: absolute;
+    width: 100000px;
+    height: 100000px;
+    z-index: 1;
+    /* background-color: green; */
+    transform: translateX(-50%) translateY(-50%) translateZ(100px);
+}
+#title-toc-thankyou {
+    z-index: 20;
+    position: absolute;
+    width: 1500px;
+    height: 1200px;
+    transition: all 1s;
+}
+
+#title-toc-thankyou.present {
+    backdrop-filter: blur(20px);
 }
