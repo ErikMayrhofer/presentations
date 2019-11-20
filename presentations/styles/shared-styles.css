@@ -25,7 +25,6 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {
-    line-height: 1;
 }
 ol, ul {
     list-style: none;
@@ -110,6 +109,16 @@ a:focus {
     height: 710px;
 }
 
+.step-sized {
+    width: 970px;
+    height: 710px;
+}
+
+.viewport-sized {
+    width: 1020px;
+    height: 760px;
+}
+
 body.impress-mouse-timeout div#impress-toolbar {
     display: none;
 }
@@ -118,10 +127,6 @@ body.impress-mouse-timeout {
     cursor: none;
 }
 
-.step .substep {
-    opacity: 0;
-}
-
-.step .substep.substep-visible {
-    opacity: 1;
+.notes {
+    display: none;
 }

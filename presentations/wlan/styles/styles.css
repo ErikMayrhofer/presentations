@@ -1,5 +1,20 @@
 @import url('../../styles/shared-styles.css');
 @import url('https://fonts.googleapis.com/css?family=Calistoga&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+
+.background {
+    z-index: -1000;
+    content: '';
+    position: absolute;
+    background-image: url('../img/backgroundcolor2.JPG');
+    background-size: cover;
+}
+
+.step {
+    border: 4px dashed #4c061d;
+    border-radius: 20px;
+}
 
 #viewport {
     border-radius: 10px;
@@ -12,9 +27,17 @@
     align-items: center;
 }
 
+.mask {
+    opacity: 0;
+    transition: 1s opacity;
+}
+.mask.active {
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
 .mask > * {
     transform: translateY(50px);
-    opacity: 0;
     transition: all 1s;
     transition-delay: 0s;
 }
@@ -33,7 +56,6 @@
 .mask.active > * {
     transform: translateY(0);
     clip-path: polygon(0 0, 50% 0, 100% 0, 100% 100%, 0 100%);
-    opacity: 1;
     transition-delay: 0.5s;
 }
 
@@ -41,6 +63,7 @@
 h1 {
     font-family: 'Calistoga';
     font-size: 120px;
+    text-shadow: 0 0 20px #d17a22, 0 0 6px #4c061d;
 }
 
 
@@ -67,7 +90,7 @@ h1 {
 }
 .vector.present .stroktext-border {
     stroke-dashoffset: 0%;
-    stroke-width: 3px;
+    stroke-width: 5px;
     stroke-dasharray: 10;
     stroke-dashoffset: 100;
     transition-duration: 3s;
@@ -82,5 +105,64 @@ h1 {
 }
 .vector.present .stroktext-fill {
     clip-path: polygon(0 0, 150% 0, 100% 100%, 0 100%);
-    transition-duration: 3s;
+    transition-duration: 4s;
+}
+
+.substep {
+    opacity: 1;
+}
+
+
+
+
+p {
+    font-family: 'Ubuntu Mono';
+    font-size: 100px;
+    color: #411111;
+    text-shadow: 
+    1px 1px 0 #ad3636,
+    -2px 1px 0 #ad3636,
+    -3px 2px 0 #ad3636,
+    -4px 2px 0 #ad3636;
+}
+.substep {
+    color: #ff9028;
+    text-shadow: none;
+    opacity: 0;
+}
+
+.substep-visible {
+    color: #411111;
+    text-shadow: 
+    1px 1px 0 #ad3636,
+    -2px 1px 0 #ad3636,
+    -3px 2px 0 #ad3636,
+    -4px 2px 0 #ad3636;
+    opacity: 1;
+    animation: showswiper;
+    animation-duration: 1s;
+}
+
+@keyframes showswiper{
+    0% {
+        color: transparent;
+        opacity: 1;
+        text-shadow: 0 0 40px #ff9028;
+    }
+    30% {
+        color: transparent;
+        opacity: 1;
+        text-shadow: 0 0 0 #ff9028;
+    }
+    50% {
+        color: transparent;
+    }
+    100% {
+        color: #411111;
+        text-shadow: 
+        1px 1px 0 #ad3636,
+        -2px 1px 0 #ad3636,
+        -3px 2px 0 #ad3636,
+        -4px 2px 0 #ad3636;
+    }
 }

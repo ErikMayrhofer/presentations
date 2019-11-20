@@ -11,9 +11,13 @@
     var api;
     var lib;
 
-    const viewPortShowerStyles = `
+    const viewPortPositioning = `
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
+    `
+
+    const viewPortShowerStyles = `
+    ${viewPortPositioning}
     width: 1020px;
     height: 760px;
     box-sizing: content-box;
@@ -45,6 +49,12 @@
 
             viewportShower.style = style;
             root.appendChild(viewportShower);
+        }
+
+        const viewportelements = document.querySelectorAll('[data-viewport-attach]');
+        for(let v of viewportelements){
+            v.style += viewPortPositioning;
+            root.appendChild(v)
         }
     })
 })(document, window);
