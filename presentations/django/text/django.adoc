@@ -271,3 +271,73 @@ class ...Serializer(serializers.HyperlinkedModelSerializer):
 ----
 
 == Keycloak
+
+=== Install 
+[source, bash]
+----
+pip install django-oauth-toolkit
+----
+
+.quotemanager/settings.py
+[source, python]
+----
+INSTALLED_APPS = [
+    ...
+    'oauth2_provider',
+    ...
+]
+
+...
+
+OAUTH2_PROVIDER = {
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'},
+    'RESOURCE_SERVER_INTROSPECTION_URL':
+        'http://localhost:8080/auth/realms/master/protocol/openid-connect/token/introspect',
+    'RESOURCE_SERVER_INTROSPECTION_CREDENTIALS': ('django-backend', '7031ca56-87dc-4f2b-aa93-52fb79eb5a86')
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ]
+}
+----
+
+=== Protecting the API
+
+[source, python]
+----
+from rest_framework import viewsets, permissions
+----
+
+[source, python]
+----
+class QuoteView(viewsets.ModelViewSet):
+    ...
+    permission_classes = [permissions.IsAuthenticated]
+----
+
+=== Testing out the Endpoitn
+
+.Obtain Bob's Token
+[source, bash]
+----
+http -p b --form \
+  -a frontend:f4704eae-43c1-4017-bea1-6bf65e64be1e \
+  POST localhost:8080/auth/realms/master/protocol/openid-connect/token \
+  username=bob password=bob grant_type=password | jq -r ".access_token"
+
+TOKEN=$(http -p b --form \
+  -a frontend:f4704eae-43c1-4017-bea1-6bf65e64be1e \
+  POST localhost:8080/auth/realms/master/protocol/openid-connect/token \
+  username=bob password=bob grant_type=password | jq -r ".access_token")
+----
+
+.Query Protected URL
+[source, bash]
+----
+http -v localhost:8000/quotes/ Authorization:"Bearer $TOKEN"
+----

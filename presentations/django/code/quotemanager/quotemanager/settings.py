@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'oauth2_provider',
     'quotemanager',
     'quotes'
 ]
@@ -102,6 +103,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+OAUTH2_PROVIDER = {
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'},
+    'RESOURCE_SERVER_INTROSPECTION_URL':
+        'http://localhost:8080/auth/realms/master/protocol/openid-connect/token/introspect',
+    'RESOURCE_SERVER_INTROSPECTION_CREDENTIALS': ('django-backend', '7031ca56-87dc-4f2b-aa93-52fb79eb5a86')
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ]
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
