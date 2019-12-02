@@ -1,4 +1,5 @@
 = Preparations
+:source-highlighter: pygments
 :icons: font
 
 == Conda

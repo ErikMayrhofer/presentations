@@ -1,4 +1,6 @@
 = Django "quotemanager"
+:source-highlighter: coderay
+
 Erik Mayrhofer
 
 Quarkus zu Spring = Flask zu Django

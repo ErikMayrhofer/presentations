@@ -1,4 +1,5 @@
 = Flask Quote
+:source-highlighter: coderay
 Erik Mayrhofer
 
 
@@ -59,7 +60,7 @@ class Quote:
         self.text = text
         self.person = person
 
-        
+
 persons = [
     Person("Erik Mayrhofer", 1),
     Person("Test Person", 2)
