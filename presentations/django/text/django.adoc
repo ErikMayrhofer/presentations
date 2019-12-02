@@ -326,12 +326,12 @@ class QuoteView(viewsets.ModelViewSet):
 [source, bash]
 ----
 http -p b --form \
-  -a frontend:f4704eae-43c1-4017-bea1-6bf65e64be1e \
+  -a frontend:460d1a14-b774-482e-b03e-a3830874d9c1 \
   POST localhost:8080/auth/realms/master/protocol/openid-connect/token \
   username=bob password=bob grant_type=password | jq -r ".access_token"
 
 TOKEN=$(http -p b --form \
-  -a frontend:f4704eae-43c1-4017-bea1-6bf65e64be1e \
+  -a frontend:460d1a14-b774-482e-b03e-a3830874d9c1 \
   POST localhost:8080/auth/realms/master/protocol/openid-connect/token \
   username=bob password=bob grant_type=password | jq -r ".access_token")
 ----

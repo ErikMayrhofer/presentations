@@ -107,7 +107,7 @@ OAUTH2_PROVIDER = {
     'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'},
     'RESOURCE_SERVER_INTROSPECTION_URL':
         'http://localhost:8080/auth/realms/master/protocol/openid-connect/token/introspect',
-    'RESOURCE_SERVER_INTROSPECTION_CREDENTIALS': ('django-backend', '7031ca56-87dc-4f2b-aa93-52fb79eb5a86')
+    'RESOURCE_SERVER_INTROSPECTION_CREDENTIALS': ('django-backend', 'a3d6fd83-f69a-4fd2-9b85-c8f44b441e36')
 }
 
 REST_FRAMEWORK = {

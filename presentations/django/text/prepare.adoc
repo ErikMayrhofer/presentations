@@ -11,6 +11,12 @@ conda activate presenv
 conda install pip
 ----
 
+== Keycloak
+ * [ ] Import Realms
+ * [ ] Regenerate Client secrets
+ * [ ] Update Code for backend and frontend
+ * [ ] Add Users 
+
 == Pycharm
 
 * [ ] Presentation Mode
