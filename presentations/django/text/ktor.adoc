@@ -1,0 +1,15 @@
+= Ktor "quotemanager"
+Erik Mayrhofer
+
+Kotlin Web-Framework
+
+== Erklärungen
+ * Client und Serverseitig
+ * "Quick and Dirty"
+ * Datenbankanbindung über JPA selber machen
+ * Ktor Backends (Netty, Jetty, Tomcat)
+
+== Todos
+
+
+== Basic Project
