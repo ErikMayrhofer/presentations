@@ -104,10 +104,29 @@ post("/quotes"){
 }
 ----
 
-=== Test Post
-[source, httpie]
+== Http Templating
+
+[source, gradle]
 ----
-http -v POST localhost:8080/quotes/ person:='{"id":1}' text="Yeet"
+implementation "io.ktor:ktor-html-builder:$ktor_version"
 ----
 
-== Keycloak
+[source, kotlin]
+----
+get("/quoteui") {
+    call.respondHtml {
+        body {
+            h1 {
+                +"Quotes"
+            }
+            quotes.forEach {
+                ul {
+                    p {
+                    +"Quote: ${it.text}"
+                    }
+                }
+            }
+        }
+    }
+}
+----
