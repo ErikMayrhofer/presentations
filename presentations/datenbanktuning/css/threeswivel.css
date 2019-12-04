@@ -1,0 +1,287 @@
+/***** Fonts *****/
+
+/* @import url(http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic|Cutive+Mono); */
+@import url(fonts.css);
+
+
+/***** Fallback message *****/
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+/***** Per slide hacks *****/
+
+/***** Presentation *****/
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+
+    background: #fff;
+}
+
+.step {
+    position: relative;
+    width: 900px;
+    height: 700px;
+    padding: 40px 60px;
+    margin: 20px auto;
+
+    box-sizing:         border-box;
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    letter-spacing: -1px;
+    line-height: 1.5;
+}
+
+/*
+    Make inactive steps a little bit transparent.
+*/
+.slide:before{
+    position: absolute;
+    width: 100%;
+    margin: -40px -60px -40px -60px;
+    height: 100%;
+    content: ' ';
+    opacity: 0.9;
+    transition: opacity 1s;
+}
+.impress-enabled .step {
+    margin: 0;
+    /* opacity: 0.3; */
+    transition:         opacity 1s;
+}
+.impress-enabled .slide.active:before,
+.impress-on-step-tools-outro #step-tools-intro:before,
+.impress-on-step-db-outro #step-db-intro:before,
+.impress-on-step-client-outro #step-client-intro:before,
+.impress-on-step-design-outro #step-design-intro:before,
+.impress-on-step-sub-overview #step-graphs:before,
+.impress-on-step-sub-overview .intro:before
+{ 
+    opacity: 0;
+}
+
+body[class*="impress-on-step-design-back"] .slide:not(.design),
+body[class*="impress-on-step-tools-back"] .slide:not(.tools),
+body[class*="impress-on-step-db-back"] .slide:not(.db),
+body[class*="impress-on-step-client-back"] .slide:not(.client)
+{
+    opacity: 0;
+}
+
+/*
+    Hide some panels
+*/
+.hide{
+    opacity: 0;
+}
+.hide.active {
+    opacity: 1;
+}
+.impress-on-step-title .slide:not(#step-title),
+.impress-on-step-graphs .slide:not(#step-graphs),
+.impress-on-step-sub-overview .back {
+    opacity: 0;
+}
+
+.impress-on-step-end .slide:before,
+.impress-on-step-intro .slide:before
+{
+    opacity: 1;
+}
+
+/*
+    Slide Backgrounds style
+*/
+.slide:before, .slide {
+    background-color: rgb(236, 238, 236);
+    border-radius: 20px;
+}
+.slide {
+    box-shadow: 0 0 20px -5px #000000AA;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+    Outro Slides
+*/
+.step{
+    pointer-events: none;
+}
+.slide{
+    pointer-events: all;
+}
+
+
+
+/*
+    OTHER STUFFS
+*/
+
+.notes {
+    display: none;
+}
+
+h1, 
+h2, 
+h3 {
+    margin-bottom: 0.5em;
+    /* margin-top: 0.5em; */
+    margin-top: 0px;
+    text-align: center;
+}
+h1.large {
+    font-size: 120px;
+}
+
+p {
+    margin: 0.7em;
+}
+
+ul {
+    font-size: 1.1em;
+}
+
+li {
+    margin: 0.2em;    
+}
+
+
+div[id$="intro"] > *:not(h1){
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+body[class*="intro"] div[id$="intro"] > *,
+body[class*="outro"] div[id$="intro"] > *
+{
+    opacity: 1;
+}
+
+
+pre{
+    margin: 0;
+}
+/* Highlight.js used for coloring pre > code blocks. */
+pre > code {
+    font-size: 25px;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Inline code, no Highlight.js */
+code {
+    font-family: "Cutive mono","Courier New", monospace;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.1em;
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+
+    transition:         0.5s;
+}
+a:hover,
+a:focus {
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
+}
+
+blockquote {
+    font-family: 'PT Serif';
+    font-style: italic;
+    font-weight: 400;    
+}
+
+em {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);    
+}
+
+strong {
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
+}
+
+q {
+    font-family: 'PT Serif';
+    font-style: italic;
+    font-weight: 400;    
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+}
+
+strike {
+    opacity: 0.7;
+}
+
+
+
+/***** Plugins ******/
+.impress-enabled div#impress-toolbar {
+    position: fixed;
+    right: 1px;
+    bottom: 1px;
+    opacity: 0.6;
+}
+.impress-enabled div#impress-toolbar > span {
+    margin-right: 10px;
+}
+body.impress-mouse-timeout div#impress-toolbar {
+    display: none;
+}
+body.impress-mouse-timeout {
+    cursor: none;
+}
+/* Help popup plugin */
+.impress-enabled #impress-help {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    color: #EEEEEE;
+    font-size: 80%;
+    position: fixed;
+    left: 2em;
+    bottom: 2em;
+    width: 24em;
+    border-radius: 1em;
+    padding: 1em;
+    text-align: center;
+    z-index: 100;
+    font-family: Verdana, Arial, Sans;
+}
+.impress-enabled #impress-help td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
+
+/*
+   Disable mouse clicks / focus for body
+*/
+.impress-enabled                          { pointer-events: none }
+.impress-enabled #impress                 { pointer-events: auto }
+.impress-enabled #impress-toolbar         { pointer-events: auto }
+.impress-enabled #impress-console-button  { pointer-events: auto }

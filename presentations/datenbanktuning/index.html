@@ -1,0 +1,374 @@
+<!doctype html>
+
+<!--
+  A presentation done entirely in Markdown, as found in extras/markdown/.
+  
+  By: @henrikingo
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Markdown in impress.js | by Henrik Ingo @henrikingo</title>
+
+    <meta name="description" content="Authoring impress.js presentations in Markdown" />
+    <meta name="author" content="Henrik Ingo" />
+    <link rel="stylesheet" href="../../extras/highlight/styles/github.css">
+
+    <link href="css/threeswivel.css" rel="stylesheet" />
+
+</head>
+
+<body class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a
+            simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+    <div id="impress" data-autoplay="0">
+
+        <div id="step-intro" class="step" data-x="0" data-y="0" data-z="5000">
+            <h1> Datenbanktuning </h1>
+        </div>
+
+        <div id="step-graphs" class="step slide flex" data-x="0" data-y="0" data-z="0">
+            <h1 style="flex-grow: 0;">Scalability</h1>
+            <img src="img/scalability.svg" style="flex-grow: 1;"/>
+            <ul class="notes">
+                <li>Probleme: durchgehend online, wieviele Nutzer? => unberechenbarer workload</li>
+                <li>Für lineare Skalierbarkeit beachten</li>
+                <li>Deswegen Datebanktuning</li>
+            </ul>
+        </div>
+
+        <div id="step-title" class="step hide slide" data-x="0" data-y="500" data-z="-500" data-rotate-x="-90">
+            <h1>Datenbanktuning</h1>
+            <ul>
+                <li>Unberechenbare Benutzeranzahl</li>
+                <li>Unberechenbarer Workload</li>
+                <li>Durchgehend Online</li>
+                <li>Kein klarer Lösungsweg</li>
+            </ul>
+            <ul class="notes">
+                <li>Probleme: durchgehend online, wieviele Nutzer? => unberechenbarer workload</li>
+                <li>Für lineare Skalierbarkeit beachten</li>
+                <li>Deswegen Datebanktuning</li>
+            </ul>
+        </div>
+
+
+        <div id="step-sub-overview" class="step" data-x="0" data-y="160" data-z="10">
+            <ul class="notes">
+                <li>Bereits im Design (schlechtes Datenmodell untunbar)</li>
+                <li>Flaschenhals finden</li>
+                <li>Nichtlineare Skalierung immer teuer</li>
+            </ul>
+        </div>
+
+        <div id="step-design-intro" class="step slide intro" data-x="-750" data-y="600" data-z="-250" data-scale="0.5">
+            <h1 class="large">Design</h1>
+            <ul>
+                <li>OLAP vs OLTP</li>
+                <li>Datenmodell</li>
+                <li>Applikationsarchitektur</li>
+                <li>Hardware Konfiguration</li>
+                <li>Software Konfiguration</li>
+            </ul>
+            <ul class="notes">
+                <li>OLAP vs OLTP (andere architekturen)</li>
+                <li>Schlechtes Datenmodell -> meh</li>
+                <li>Datamodel soll nicht, wie es die theoretiker gerne hätten generell sein, sondern Applikationsspezifisch</li>
+                <li>Hardware muss natürlich passen, SSD, Raid, etc</li>
+                <li>Große DB vllt nicht auf Docker oder VM</li>
+            </ul>
+        </div>
+        <div id="step-design-back-1" class="step slide back design" data-x="-3000" data-y="600" data-z="0" data-rotate-y="90">
+            <h1>Datenmodell</h1>
+            <ul>
+                <li>Data Access Path</li>
+                <li>Denormalisieren</li>
+                <li>OLAP vs OLTP</li>
+                <li>Aggregation Tables</li>
+            </ul>
+            <ul class="notes">
+                <li>Welche Tables werden verjoined -> Denormalisieren</li>
+                <li>OLAP -> Denorm, bei OLTP nicht</li>
+                <li>Form der selektiven Denomralisierung -> Aggregation table</li>
+            </ul>
+        </div>
+        <div id="step-design-back-2" class="step slide back design" data-x="-3000" data-y="600" data-z="-1000" data-rotate-y="90">
+            <h1>Applikationsarchitektur</h1>
+            <ul>
+                <li>Pessimistic / Optimistic Locking</li>
+                <li>Stateless => Optimistic</li>
+                <li>Softwarelayer</li>
+                <li>JPA</li>
+            </ul>
+            <ul class="notes">
+                <li>Locking => Je nachdem was man erwartet</li>
+                <li>Viele Nutzer gleichzeitig => Optimistisch</li>
+                <li>Wenige Nutzer => Pessimistisch</li>
+                <li>Softwarelayer => schlechte Queries => Overhead => Client</li>
+            </ul>
+        </div>
+        <div id="step-design-back-3" class="step slide back design" data-x="-3000" data-y="600" data-z="-2000" data-rotate-y="90">
+            <h1>Hardwarekonfiguration</h1>
+            <ul>
+                <li>Verborgene Skalierbarkeitsprobleme</li>
+                <li>Flaschenhälse finden</li>
+            </ul>
+            <ul class="notes">
+                <li>"Kaufen um genug zu haben"</li>
+                <li>Auf Skalierbarkeit achten => genug Platz zum Ausbauen</li>
+                <li>Rechtzeitig vorsorgen</li>
+                <li>Schwächstes Glied</li>
+            </ul>
+        </div>
+        <div id="step-design-back-4" class="step slide back design" data-x="-3000" data-y="600" data-z="-3000" data-rotate-y="90">
+            <h1>Softwarekonfiguration</h1>
+            <ul>
+                <li>Betriebssystem</li>
+                <li>Filesystem</li>
+                <li>Netzwerk</li>
+                <li>Asynchron</li>
+            </ul>
+            <pre><code class="SQL">FILESYSTEMIO_OPTIONS</code></pre>
+            <ul class="notes">
+                <li>Schlankes Betriebssystem</li>
+                <li>VM -> Docker -> DB => Schlecht</li>
+                <li>Wahl des Filesystems (btrfs? NTFS?)</li>
+                <li>Ansynchrone Abarbeitung</li>
+                <li>Init-Params</li>
+                <li>Netzwerkkonfiguration beachten (hardware?)</li>
+            </ul>
+        </div>
+        <div id="step-init-parameter" class="step hide slide" data-x="0" data-y="500" data-z="-1500" data-rotate-x="-90" data-rotate-y="0" data-rotate-z="0">
+            <h1>Initialisationsparameter</h1>
+            <ul>
+                <li>Binärformat</li>
+                <li>System-Tables</li>
+                <li><pre><code>ALTER SYSTEM SET AAA=BBB;</code></pre></li>
+                <li><pre><code>CREATE PFILE FROM SPFILE;</code></pre></li>
+            </ul>
+            <ul class="notes">
+                <li>Nicht Lesbar</li>
+                <li>Kans in lesbares format umwandeln</li>
+            </ul>
+        </div>
+        <div id="step-design-outro" class="step outro" data-x="-750" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
+
+
+
+        <div id="step-db-intro" class="step slide intro" data-x="-250" data-y="600" data-z="-250" data-scale="0.5">
+            <h1 class="large">Datenbank</h1>
+            <ul>
+                <li>Cursor</li>
+                <li>Storage & Memory</li>
+                <li>Redo-Log</li>
+                <li>Tablespaces</li>
+                <li>SQL</li>
+            </ul>
+        </div>
+        <div id="step-db-back-1" class="step slide back db" data-x="-750" data-y="2000" data-z="0" data-rotate-x="90" data-rotate-z="-90">
+            <h1>Cursor</h1>
+            <ul>
+                <li>PL/SQL => Cursor</li>
+                <li>JDBC => Prepared Statements</li>
+                <li>Dynamic SQL</li>
+            </ul>
+            <ul class="notes">
+                <li>
+                    Dynamic-SQL => Kein Optimizer, Jedes mal neu Parsen
+                </li>
+                <li>Hard vs Soft parse kommt später</li>
+            </ul>
+        </div>
+        <div id="step-db-back-2" class="step slide back db" data-x="-750" data-y="2000" data-z="-1000" data-rotate-x="90" data-rotate-z="-90">
+            <h1>I/O & Memory</h1>
+            <ul>
+                <li>System Global Area</li>
+                <li>Shared, Large, Java, Streams - Pool</li>
+                <li>Buffer Cache</li>
+                <li>Log Buffer</li>
+                <li>Process Private Memory</li>
+                <li>Automatic vs Manual</li>
+                <li><pre><code class="sql">SELECT * FROM V$SGA_TARGET_ADVICE</code></pre></li>
+                <li><pre><code class="sql">SELECT * FROM V$SGA_SYSSTAT</code></pre></li>
+            </ul>
+            <ul class="notes">
+                <li>Striping</li>
+                <li>SGA 0 => Manual Mode für alle, sonst automatisch</li>
+                <li>Größe über Initialisationsparameter</li>
+                <li>Wie Groß? => Vorschläge aus SYSSTAT</li>
+                <li>Buffer => keine FUll Table Scans</li>
+                <li>Buffer-Pools => Unterschiedliche Zugriffsmuster (einer viel, einer wenig)</li>
+            </ul>
+        </div>
+        <div id="step-db-back-3" class="step slide back db" data-x="-750" data-y="2000" data-z="-2000" data-rotate-x="90" data-rotate-z="-90">
+            <h1>Redo Log</h1>
+            <ul>
+                <li>Redo vs Undo</li>
+                <li>Archiver</li>
+                <li>Groß => Gut</li>
+            </ul>
+            <h1>Tablespaces</h1>
+            <ul>
+                <li>Temporär, Applikation, Undo</li>
+                <li>Fragmentation</li>
+                <li>Segment Advisor</li>
+            </ul>
+        </div>
+        <div id="step-db-back-4" class="step slide back db" data-x="-750" data-y="2000" data-z="-3000" data-rotate-x="90" data-rotate-z="-90">
+            <h1>SQL - Tuning</h1>
+            <ul>
+                <li>Hard Parse / Soft Parse</li>
+                <li>Access Paths</li>
+                <li>Indices</li>
+                <li>Heap Organized vs Index Organized</li>
+                <li>Full Table Scans</li>
+                <li><pre><code>SELECT * ... WHERE LOWER(pk) = 'abc'</code></pre></li>
+
+            </ul>
+            <ul class="notes">
+                <li>Full Table Scans => weil kein Index, Weil PK durch funktion</li>
+                <li>Indices: B-Tree wobei Blätter 2-fach verlinkte liste sind</li>
+            </ul>
+        </div>
+        <div id="step-db-outro" class="step outro" data-x="-250" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
+
+
+        <div id="step-tools-intro" class="step slide intro" data-x="250" data-y="600" data-z="-250" data-scale="0.5">
+            <h1 class="large">Tools</h1>
+            <ul>
+                <li>System Tables</li>
+                <li>Statspack</li>
+                <li>SQL Trace</li>
+                <li>Kommerzielle Tools</li>
+            </ul>
+        </div>
+        <div id="step-tools-back-1" class="step slide back tools" data-x="750" data-y="2000" data-z="-3000" data-rotate-x="90" data-rotate-z="90">
+            <h1>Info Tables</h1>
+            <ul>
+                <li>System Tables mit Statistiken</li>
+                <li>per Session / Systemweit</li>
+                <li>Metrics vs Statistics</li>
+                <li>Wait Events</li>
+            </ul>
+            <ul class="notes">
+                <li>userenv() => SID</li>
+                <li>Metrics: immer pro Zeit (V$SYSMETRIC_HISTORY => Zeitverlauf)</li>
+                <li>Statistics: Count</li>
+                <li>Wait Events: Wartezeiten (Festplatte)</li>
+            </ul>
+        </div>
+        <div id="step-tools-back-2" class="step slide back tools" data-x="750" data-y="2000" data-z="-2000" data-rotate-x="90" data-rotate-z="90">
+            <h1>Statspack</h1>
+            <ul>
+                <li>SQL-Tool</li>
+                <li>Mitgeliefert in Oracle</li>
+                <li>Snapshots vom Gesamten System</li>
+                <li>Diff-Ansicht</li>
+            </ul>
+        </div>
+        <div id="step-tools-back-3" class="step slide back tools" data-x="750" data-y="2000" data-z="-1000" data-rotate-x="90" data-rotate-z="90">
+            <h1>SQL Trace</h1>
+            <ul>
+                <li><pre><code>ALTER SESSION SET sql_trace = true;</code></pre></li>
+                <li>Tracing-Session is benennbar</li>
+                <li>Generiert ein File</li>
+                <li>TKProf</li>
+            </ul>
+            <ul class="notes">
+                <li>Auch Systemweit</li>
+            </ul>
+        </div>
+        <div id="step-tools-back-4" class="step slide back tools" data-x="750" data-y="2000" data-z="0" data-rotate-x="90" data-rotate-z="90">
+            <h1>Kommerzielle Tools</h1>
+            <ul>
+                <li>ADDM</li>
+                <li>AWR</li>
+                <li>OEM</li>
+            </ul>
+            <ul class="notes">
+                <li>Automated Database Diagnostics Manager (10g Tuning Pack)</li>
+                <li>Oracle Enterprise Manager</li>
+            </ul>
+        </div>
+        <div id="step-tools-outro" class="step outro" data-x="250" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
+
+
+        <div id="step-client-intro" class="step slide intro" data-x="750" data-y="600" data-z="-250" data-scale="0.5">
+            <h1 class="large">Client (JPA)</h1>
+            <ul>
+                <li>Eager vs Lazy</li>
+                <li>Pagination</li>
+                <li>Columns</li>
+                <li>JPA ist böse</li>
+            </ul>
+        </div>
+        <div id="step-client-back-1" class="step slide back client" data-x="3000" data-y="600" data-z="-3000" data-rotate-y="-90">
+            <h1>Eager vs Lazy</h1>
+            <ul>
+                <li>Eager Loading => Netzwerk</li>
+                <li>Lazy Loading => "N+1 Problem"</li>
+            </ul>
+            <ul class="notes">
+                <li>"N+1 Problem" => Jedes abhängige Element macht neue Connection auf</li>
+                <li>Wenn man weiß man wird sie fix brauchen => Eager, sonst Lazy</li>
+            </ul>
+        </div>
+        <div id="step-client-back-2" class="step slide back client" data-x="3000" data-y="600" data-z="-2000" data-rotate-y="-90">
+            <h1>Pagination</h1>
+            <ul>
+                <li>Viele Abfragen</li>
+                <li>Kleinere Payloads</li>
+                <li>Serverseitig / Clientseitig</li>
+                <li>Hybrid</li>
+            </ul>
+        </div>
+        <div id="step-client-back-3" class="step slide back client" data-x="3000" data-y="600" data-z="-1000" data-rotate-y="-90">
+            <h1>Columns</h1>
+            <ul>
+                <li>Smart Queries</li>
+                <li><pre><code class="java">entityManager.createQuery("select d.id from Department d")</code></pre></li>
+                <li>BLOBs beachten</li>
+            </ul>
+        </div>
+        <div id="step-client-back-4" class="step slide back client" data-x="3000" data-y="600" data-z="0" data-rotate-y="-90">
+            <h1>Ist JPA böse?</h1>
+            <ul>
+                <li>Oft Unoptimierte SQL-Queries</li>
+                <li>Der Benutzer verlässt sich rein auf JPA</li>
+                <li>Versteckter Overhead</li>
+            </ul>
+            <ul class="notes">
+                <li>ABER! Praktisch und wenn mitdenken dann schnell</li>
+            </ul>
+        </div>
+        <div id="step-client-outro" class="step outro" data-x="750" data-y="600" data-z="-250" data-scale="0.5" data-autoplay="0.1"></div>
+
+        <div id="step-end" class="step" data-x="0" data-y="-100" data-z="6000">
+            <h1> Vielen Dank! </h1>
+            <ul class="notes">
+                <li>
+                    Quellen am Handout
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- <div id="impress-toolbar"></div> -->
+    <!-- <div id="impress-help"></div> -->
+
+
+    <script type="text/javascript" src="../../extras/highlight/highlight.pack.js"></script>
+    <script type="text/javascript" src="../../extras/mermaid/mermaid.min.js"></script>
+    <script type="text/javascript" src="../../extras/markdown/markdown.js"></script>
+    <script type="text/javascript" src="../../js/impress.js"></script>
+    <script>impress().init();</script>
+</body>
+
+</html>
