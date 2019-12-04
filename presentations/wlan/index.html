@@ -31,6 +31,21 @@
     </ul>
 </div>
 
+
+<div class="step mask">
+    <h1>Übertragung</h1>
+    <p>Wellen</p>
+    <p>Bit vs. Welle: PSK</p>
+    <p>Channels</p>
+    <ul class="notes">
+        <li>Wellen: 2.4GHz => 12cm, Elektromagnetische Wellen,</li>
+        <li>Wellen: Interferenz, Reflektion, Beugung </li>
+        <li>PSK: Phase shift keying (e.G 1 = 180°, 0 = 0°)</li>
+        <li>Channels: Frequenzintervall auf dem die Übertragung passiert, Nächste Slide</li>
+    </ul>
+    
+</div>
+
 <div class="step mask">
     <h1>IEEE 802.11</h1>
     <p class="substep">2.4 und 5 GHz</p>
@@ -39,6 +54,13 @@
     <p class="substep">WIFI-6</p>
     <ul class="notes">
         <li>.11: 2.4-2.485 GHz (FHSS Fast & Slow)</li>
+        <li>Mehrere Kanäle: 1-13 (bzw 1-11 in Amerika, und 1-14 in Japan)</li>
+        <li>Kanäle sind 20MHz breit, aber nur 5MHz auseinander. (Wenn Genau gleich, dann wirds abgesprochen, wenn überlappung, dann wirds langsam)</li>
+        <li>Deswegen: 5 Channels abstand, Standard: 1, 6, 11</li>
+        <li>5GHz, ab 802.11a</li>
+        <li>20MHz breit, aber 20 MHz auseinander. Genug channels für alle</li>
+        <li>Es gibt mehrere breitere (40MHz, 80 Mhz bänder, die aber dann andere überdecken)</li>
+
         <li>Frequenzselektive Störungen</li>
         <li>FHSS (Durch pseudorandom hoppingsequenzen => Ein paket geht kaputt wegen überschneidung, aber egal, weil beim nächsten mal ist man wieder auseinander)</li>
         <li>DSSS (Spread, Despread)</li>
@@ -66,13 +88,49 @@
     <ul class="notes">
         <li>Wired Equivalent Privacy</li>
         <li>WEP (XOR mit Pseudozufallszahlenstream (RC-4, security by obscurity aber arc-4 yolo) generiert aus gemeinsamen Seed von Empfänger und Sender)</li>
-        <li>Wifi Protected Access</li>
+        <li>Wifi Protected Access (Übergangsmäßig) -> TKIP (baut auf RC4 auf)</li>
+        <li>Wifi Protected Access 2: Teil von 802.11i.</li>
+        <li>WPA2 Personal vs Enterprise: Personal globales Passwort, Enterprise: login mit username und passwort </li>
+        <li>WPA2 nutzt AES-CCMP (modern)</li>
+    </ul>
+</div>
+
+<div class="step mask">
+    <div></div>
+    <div></div>
+    <h1>WPA2: AES</h1>
+    <p class="substep">Algorithmus</p>
+    <p class="substep">Reversibel</p>
+    <p class="substep">CPU</p>
+    <ul class="notes">
+        <li>Algorithm: XOR mit Key, Shift Rows, Mix Columns (Matrix multiplication), aaand again</li>
+        <li>Alle Operationen haben eine Umkehrung</li>
+        <li>Wegen Standard: Auf der CPU nativ supported (GBit/s)</li>
+    </ul>
+</div>
+
+<div class="step mask">
+    <div></div>
+    <h1>
+        Modes
+    </h1>
+    <p class="substep">Infrastrukturmodus</p>
+    <p class="substep">Ad-Hoc Modus</p>
+    <ul class="notes">
+        <li></li>
     </ul>
 </div>
 
 
-
-
+<div id="end" class="step vector">
+    <svg viewBox="0 0 960 300">
+        <symbol id="s-text-2">
+            <text font-family="Calistoga" text-anchor="middle" x="50%" y="80%" font-size="300px">Danke</text>
+        </symbol>
+        <use xlink:href="#s-text-2" class="stroktext-border"></use>
+        <use xlink:href="#s-text-2" class="stroktext-fill"></use>
+    </svg>
+</div>
 
 <!-- =========================================== -->
 <!-- =========================================== -->
