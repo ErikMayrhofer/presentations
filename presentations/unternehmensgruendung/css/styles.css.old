@@ -1,0 +1,229 @@
+/***** Fonts *****/
+
+/* @import url(http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic|Cutive+Mono); */
+@import url(fonts.css);
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+
+/***** Fallback message *****/
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+/***** Per slide hacks *****/
+.step .notes {
+    display: none;
+}
+
+/***** Presentation *****/
+
+.step {
+    width: 1000px;
+    height: 760px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 1s;
+}
+#bigheader-end{
+    justify-content: start;
+}
+
+html, body {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+body {
+    transition: background-color 1s;
+    color: white;
+    text-shadow: 0 0 8px black, 0 0 3px black;
+}
+
+h1, h2, h3, span {
+    text-shadow: 0 0 5px black,
+    -2px 0 1px black,
+    -4px 1px 2px black,
+    -6px 2px 3px black;
+    margin: 0;
+}
+
+li {
+    font-size: 3rem;
+}
+
+
+.step{
+    font-family: 'Staatliches', sans-serif;
+    font-size: 2.2rem;
+}
+body[class*="header"] {
+    background-color: #9c2c2c;
+}
+body[class*="bigheader"] {
+    background-color: #7fa99b;
+}
+body[class*="untart"] {
+    background-color: #94aa2a;
+}
+body[class*="grd"] {
+    background-color: #FAA613;
+}
+body[class*="planen"] {
+    background-color: #485665;
+}
+body[class*="planen-header"] {
+    background-color: black;
+}
+
+img[src*=".svg"] {
+    color: white;
+    height: auto;
+    width: 5em;
+    filter: drop-shadow(-6px 3px 3px black)
+}
+
+.hide-not-active:not(.active){
+    opacity: 0;
+}
+
+.horizontal-flex {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-evenly;
+}
+
+h2.fckn-huge {
+    margin: 0;
+    font-size: 10rem;
+}
+
+.stripe-holder{
+    width: 0;
+    height: 0;
+    overflow: visible;
+}
+
+#stripe-a {
+    transform: translateZ(-10px) rotateZ(30deg);
+}
+
+#stripe-b {
+    transform: translateZ(-10px) translateY(-1000px) rotateZ(15deg);
+}
+
+.stripe {
+    position: absolute;
+    transform-origin: center;
+    margin: 0 -5000px;
+    width: 10000px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 0 black;
+}
+
+ul {
+    list-style-type: upper-latin;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.671), 0 0 3px rgba(0, 0, 0, 0.671);
+}
+ul > li > span {
+    color: white;
+}
+
+.list {
+    display: block;
+}
+
+.list > h1 {
+    position: relative;
+    transform-origin: 0 0;
+    transform: rotateZ(-90deg);
+    bottom: -100%;
+}
+
+.list > ul {
+    position: relative;
+    bottom: 0;
+    margin-bottom: 0;
+    margin-left: 7rem;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.list.present > ul {
+    opacity: 1;
+}
+
+.list.future {
+    opacity: 0;
+}
+
+body[class*="planen-header"] .list {
+    opacity: 1;
+}
+
+#planen-header {
+    flex-direction: row;
+}
+
+/***** Plugins ******/
+.impress-enabled div#impress-toolbar {
+    position: fixed;
+    right: 1px;
+    bottom: 1px;
+    opacity: 0.6;
+}
+.impress-enabled div#impress-toolbar > span {
+    margin-right: 10px;
+}
+body.impress-mouse-timeout div#impress-toolbar {
+    display: none;
+}
+body.impress-mouse-timeout {
+    cursor: none;
+}
+/* Help popup plugin */
+.impress-enabled #impress-help {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    color: #EEEEEE;
+    font-size: 80%;
+    position: fixed;
+    left: 2em;
+    bottom: 2em;
+    width: 24em;
+    border-radius: 1em;
+    padding: 1em;
+    text-align: center;
+    z-index: 100;
+    font-family: Verdana, Arial, Sans;
+}
+.impress-enabled #impress-help td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/*
+   Disable mouse clicks / focus for body
+*/
+.impress-enabled                          { pointer-events: none }
+.impress-enabled #impress                 { pointer-events: auto }
+.impress-enabled #impress-toolbar         { pointer-events: auto }
+.impress-enabled #impress-console-button  { pointer-events: auto }

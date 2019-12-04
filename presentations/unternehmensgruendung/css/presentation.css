@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|Kaushan+Script&display=swap');
+
+body {
+    font-family: 'Staatliches';
+    transition: all 1s;
+}
+
+step {
+    color: blue;
+}
+
+
+h1, h2, h3, span {
+    text-shadow: 0 0 5px black,
+    -2px 0 1px black,
+    -4px 1px 2px black,
+    -6px 2px 3px black;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+h1 {
+    color: white;
+    font-size: 10rem;
+    transition: all 1s;
+}
+
+.business-bg {
+    position: absolute;
+    transform: translateX(-2250px) translateY(-50%) rotateZ(90deg);
+    width: 1100px;
+    height: 1700px;
+    background: repeating-linear-gradient(transparent, transparent 41px, #438bf7 41px, #438bf7 42px),
+                linear-gradient(-90deg, white, white 100px, #e4520f 100px, #e4520f 102px, white 102px);
+    z-index: -1;
+    box-shadow: 0 0 10px 0 black;
+    border-radius: 10px;
+}
+.business-plan {
+    padding-top: 60px;
+}
+
+.business-plan > h1, h2, h3, h4, p, li, ul {
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    text-shadow: none;
+}
+.business-plan > h1, .post-it > h1 {
+    font-family: 'Kaushan Script';
+    line-height: 126px;
+    text-shadow: none;
+    font-size: 126px;
+    color: black;
+    height: 126px;
+}
+.business-plan > h2 {
+    font-family: 'Bad Script';
+    font-weight: bold;
+    line-height: 125px;
+    font-size: 60px;
+    height: 84px;
+    margin-top: 42px;
+}
+.business-plan ul {
+    margin-left: 100px;
+    list-style: none;
+}
+.business-plan li {
+    font-family: 'Bad Script';
+    line-height: 55px;
+    font-size: 40px;
+    height: 42px;
+}
+
+.post-it {
+    background-color: #ffe10f;
+    box-shadow: 0 0 20px 5px black;
+    border-radius: 4px;
+    padding: 20px;
+    width: 800px;
+    color: #1c0d77;
+    box-sizing: border-box;
+}
+
+.post-it > h1 {
+    height: auto;
+    text-align: center;
+    letter-spacing: normal;
+}
+
+.post-it > ul {
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: 'Bad Script';
+    font-size: 70px;
+    list-style: none;
+    text-align: center;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/*======= PER SLIDE ========*/
+body[class*="title"] {
+    background-color: black;
+}
+body[class*="planen"] {
+    background-color: #eebd35;
+}
+body[class*="grnd"] {
+    background-color: #35ee6d;
+}
+body[class*="know"] {
+    background-color: #b165f0;
+}
+body[class*="title-toc"] #planen-header > h1 {
+    color: #eebd35;
+}
+body[class*="title-toc"] #grnd-header > h1 {
+    color: #35ee6d;
+}
+body[class*="title-toc"] #know-header > h1 {
+    color: #b165f0;
+}
+
+/* =========== GRND ============ */
+.grnd-step {
+    transition: all 0.8s;
+}
+body[class*="grnd-step"] .grnd-step:not(.active) { opacity: 0; }
+body[class*="grnd-step"] .grnd-progress { opacity: 1; }
+.grnd-progress {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    margin: 20px;
+    z-index: 3;
+    border-radius: 10px;
+    background-color: #2cc75b;
+    opacity: 0;
+    box-shadow: 0 0 5px -2px black inset;
+}
+.grnd-progress .bar{
+    height: 30px;
+    border-radius: 10px;
+    background-color: #53ff87;
+    width: 0;
+    transition: all 1s;
+    transition-timing-function: ease-in;
+    box-shadow: 0 0 5px -2px black;
+}
+body[class*="grnd-step-2"] .grnd-progress .bar {width: 9%;}
+body[class*="grnd-step-3"] .grnd-progress .bar {width: 18%;}
+body[class*="grnd-step-4"] .grnd-progress .bar {width: 27%;}
+body[class*="grnd-step-5"] .grnd-progress .bar {width: 36%;}
+body[class*="grnd-step-6"] .grnd-progress .bar {width: 45%;}
+body[class*="grnd-step-7"] .grnd-progress .bar {width: 54%;}
+body[class*="grnd-step-8"] .grnd-progress .bar {width: 63%;}
+body[class*="grnd-step-9"] .grnd-progress .bar {width: 72%;}
+body[class*="grnd-step-10"] .grnd-progress .bar {width: 81%;}
+body[class*="grnd-step-11"] .grnd-progress .bar {width: 90%;}
+body[class*="grnd-step-end"] .grnd-progress .bar {width: 100%;}
+
+.grnd-step h1 {
+    font-size: 100px;
+    text-align: center;
+}
+
+ul.notes {
+    display: none;
+}
+
+/* ========== KNOW ===========*/
+.know {
+    background-color: black;
+    box-shadow: 0 0 20px 10px black;
+    /* box-shadow: 0 0 10px 12px #b165f0 inset; */
+    border-radius: 10px;
+}
+
+.know > h1 {
+    font-size: 100px;
+    text-align: center;
+}
+
+/* ======== END ============*/
+.big-blur{
+    position: absolute;
+    width: 100000px;
+    height: 100000px;
+    z-index: 1;
+    /* background-color: green; */
+    transform: translateX(-50%) translateY(-50%) translateZ(100px);
+}
+#title-toc-thankyou {
+    z-index: 20;
+    position: absolute;
+    width: 1500px;
+    height: 1200px;
+    transition: all 1s;
+}
+
+#title-toc-thankyou.present {
+    backdrop-filter: blur(20px);
+}
